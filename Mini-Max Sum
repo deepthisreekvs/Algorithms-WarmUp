@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'miniMaxSum' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def miniMaxSum(arr):
+    # Write your code here
+    minVal = arr[0]
+    maxVal = 0
+    sumArray = 0
+    for val in arr:
+        if val < minVal:
+            minVal = val
+        if val > maxVal:
+            maxVal = val
+        sumArray += val
+    print(sumArray - maxVal,sumArray - minVal)
+
+if __name__ == '__main__':
+
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
